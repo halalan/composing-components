@@ -8,19 +8,17 @@ export default class Counter extends Component {
  };
 
 handleIncrement = Product => {
-  console.log(Product);
-    this.setState({value: this.state.value + 1});
-};
-doHandleIncrement = () => {
-  this.handleIncrement({ id: 1});
+    this.setState({count: this.state.value + 1});
 };
 
-    render() { 
+    render() {
+        console.log(this.props);
     return (
       <div>
+     <h4>{this.props.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button 
-         onClick={() => this.doHandleIncrement(this.props.Product)}
+         onClick={() => this.handleIncrement(this.props.Product)}
           className="btn btn-secondary btn-sm"
           >
            klik di sini

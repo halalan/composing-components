@@ -15,10 +15,13 @@ import Counter from './counter';
   render() {
     return (
       <div>
-       { this.state.counters.map(counter =>
-         <Counter key={counter.id} value={counter.value} selected={true}/>)}
+       { this.state.counters.map(counter =>(
+         <Counter key={counter.id} value={counter.value} id={counter.id}>
+        
+       </Counter>
+        ))}
       </div>
-    )
+    );
   }
 }
 export default Counters;
